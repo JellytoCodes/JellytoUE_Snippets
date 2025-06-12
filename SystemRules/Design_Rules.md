@@ -38,7 +38,7 @@ Plugins/
 | **함수**          | `ApplyDamage()`, `GetHealth()` / `SetHealth()`           | 동사 + 명사, Get/Set 쌍       |
 | **지역·파라미터** | `health`, `deltaTime`                                  | camelCase                    |
 
-> **기본 원칙** – “코드를 읽는 순간 *용도*가 바로 보인다.”
+> **기본 원칙** – 코드를 읽는 순간 **용도 파악**이 가능토록함
 
 ```cpp
 // ✅ Best
