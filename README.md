@@ -28,7 +28,7 @@
 ## 🏷️ Pattern Snippets
 
 ### 📄 Collision Interaction Trigger Example
-&nbsp;&nbsp;&nbsp; - 🔗 **Link** : [Entrance&ExitSystem.md](Entrance&ExitSystem.md)  
+&nbsp;&nbsp;&nbsp; - 🔗 **Link** : [Entrance&Exit_System.md](Entrance&Exit_System.md)  
 &nbsp;&nbsp;&nbsp; - 📝 **Description** : BoxCollision 기반 진입/퇴장 트리거 처리 샘플 코드
 
 <br>
