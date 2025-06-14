@@ -28,8 +28,12 @@
 ## 🏷️ Pattern Snippets
 
 ### 📄 Collision Interaction Trigger Example
-&nbsp;&nbsp;&nbsp; - 🔗 **Link** : [Entrance&Exit_System.md](Entrance&Exit_System.md)  
+&nbsp;&nbsp;&nbsp; - 🔗 **Link** : [Entrance&Exit_System.md](PatternSnippets/Entrance&Exit_System.md)  
 &nbsp;&nbsp;&nbsp; - 📝 **Description** : BoxCollision 기반 진입/퇴장 트리거 처리 샘플 코드
+
+### 📄 Multi Target Example
+&nbsp;&nbsp;&nbsp; - 🔗 **Link** : [Multi_Target_System.md](PatternSnippets/Multi_Target_System.md)  
+&nbsp;&nbsp;&nbsp; - 📝 **Description** : OverlapResult 기반 광역 이펙트 샘플 코드
 
 <br>
 
