@@ -1,25 +1,58 @@
-# 🧩 OverlapResult 활용 광역 발동 구현 샘플 코드
-`FOverlapResult`를 활용한 **OverlapResult을 활용한 광역 발동 구조** 샘플입니다.
+# 🧩 OverlapResult 기반 광역 이펙트 샘플 코드
+`FOverlapResult` 기반 **OverlapResult을 활용한 광역 이펙트 구조** 샘플
+Collision 기반, FHitResult 기반 등에 활용 가능
 
 <br>
 
 ## 🔷 Header 🔷
 ```h
-asd
+
+TArray<AActor*> GetActorsRadius(float Radius);
+
+void EffectExplosiveTrap();
+void EffectBindingTrap();
+
+float explosiveDamage;
+float bindingTime;
 ```
 
 ## 🔷 Cpp 🔷
 ```cpp
+#include "Engine/OverlapResult.h"
+
+//Hit 발생 시 특정 범위 내 Overlap 검사
+TArray<AActor*> ClassName::GetActorsRadius(float Radius)
+{
+	TArray<AActor*> HitActors;
+	TArray<FOverlapResult> Overlaps;
+
+	FCollisionShape Sphere = FCollisionShape::MakeSphere(Radius);
+	bool bHit = GetWorld()->OverlapMultiByChannel(Overlaps, GetActorLocation(), FQuat::Identity, ECC_Pawn, Sphere);
+
+	if(bHit)
+	{
+		for(const FOverlapResult& ActorResult : Overlaps)
+		{
+			AActor* Target = Cast<AActor>(ActorResult.GetActor());
+			if(Target)
+			{
+				HitActors.Add(Target);
+			}
+		}
+	}
+	return HitActors;
+}
+
 //광역 공격 처리 함수
 void ClassName::EffectExplosive()
 {
-	TArray<AActor*> variables = GetMonstersRadius(300.f);
+	TArray<AActor*> variables = GetActorsRadius(300.f);
 	for(AActor* variable : variables)
 	{
-
+		//Interface 기반 데미지 처리
 		if(variable->Implements<UDamagebleInterface>())
 		{
-			IDamagebleInterface::Execute_ReceiveDamage(variable, Explosive);
+			IDamagebleInterface::Execute_ReceiveDamage(variable, explosiveDamage);
 		}
 	}
 }
@@ -27,15 +60,16 @@ void ClassName::EffectExplosive()
 //광역 속박 처리 함수
 void ClassName::EffectBinding()
 {
-	TArray<AActor*> variables = GetMonstersRadius(300.f);
+	TArray<AActor*> variables = GetActorsRadius(300.f);
 	for(AActor* variable : variebles)
 	{
 		if(!variable) continue;
 
-		Monster->GetCharacterMovement()->DisableMovement();
-			
+		variable->GetCharacterMovement()->DisableMovement();
+
+		//FTimer 기반 속박 처리
 		FTimerHandle UnbindTimer;
-		TWeakObjectPtr<AMonsterBase> WeakMonster(Monster);
+		TWeakObjectPtr<AActor*> WeakVariable(variable);
 
 		GetWorld()->GetTimerManager().SetTimer(UnbindTimer, FTimerDelegate::CreateLambda([WeakMonster]()
 		{
@@ -43,8 +77,7 @@ void ClassName::EffectBinding()
 			{
 				if(auto MoveComp = WeakMonster->GetCharacterMovement()) MoveComp->SetMovementMode(MOVE_Walking);
 			}
-		}), trapEffect, false);
+		}), bindingTime, false);
 	}
 }
-
 ```
