@@ -1,12 +1,11 @@
 # 🧩 OverlapResult 기반 광역 이펙트 샘플 코드
-`FOverlapResult` 기반 **OverlapResult을 활용한 광역 이펙트 구조** 샘플
-Collision 기반, FHitResult 기반 등에 활용 가능
+`FOverlapResult` 기반 **OverlapResult을 활용한 광역 이펙트** 샘플  
+Collision 기반, FHitResult 기반 등에 연계하여 활용 가능  
 
 <br>
 
 ## 🔷 Header 🔷
 ```h
-
 TArray<AActor*> GetActorsRadius(float Radius);
 
 void EffectExplosiveTrap();
