@@ -3,6 +3,7 @@
 > • **볼드** = 함수명  `[in]` `[out]` = 매개변수 방향  • 한 줄 설명만 제시
 
 ---
+<br>
 
 ## GameModeBase (서버 전용)
 
@@ -15,6 +16,7 @@
 | **Logout** | `void Logout(AController* Exiting [in])` | 플레이어 이탈 시 세션·AI를 정리한다. |
 
 ---
+<br>
 
 ## GameInstance & Subsystem
 
@@ -26,6 +28,7 @@
 | **Subsystem Deinitialize** | `void Deinitialize()` | 종료 시 리소스·타이머를 해제한다. |
 
 ---
+<br>
 
 ## Actor 계층 (공용)
 
@@ -40,6 +43,7 @@
 | **OnConstruction** | `void OnConstruction(const FTransform& Xfm [in])` | 데이터 기반 초기화를 실행한다. |
 
 ---
+<br>
 
 ## ActorComponent 계층
 
@@ -52,6 +56,7 @@
 | **EndPlay** | `void EndPlay(EEndPlayReason::Type Reason [in])` | 컴포넌트 종료 및 정리를 수행한다. |
 
 ---
+<br>
 
 ## Controller / AI
 
@@ -62,8 +67,11 @@
 | **AIController OnMoveCompleted** | `void OnMoveCompleted(FAIRequestID Id [in], const FPathFollowingResult& Res [in])` | 이동 명령 완료 후 후속 행동을 결정한다. |
 
 ---
+<br>
 
 ## Behavior Tree 노드
+
+<br>
 
 ### UBTTaskNode
 
@@ -75,6 +83,8 @@
 | **OnMessage** | `void OnMessage(UBehaviorTreeComponent& BTC [in], uint8* Mem [in], FName Msg [in], int32 Id [in])` | EQS·이동 완료 메시지를 받아 태스크를 종료한다. |
 | **GetInstanceMemorySize** | `uint16 GetInstanceMemorySize() const` | 커스텀 NodeMemory의 바이트 크기를 보고한다. |
 
+<br>
+
 ### UBTService
 
 | 함수 | 시그니커 | 1-Line 설명 |
@@ -84,6 +94,8 @@
 | **OnCeaseRelevant** | `void OnCeaseRelevant(UBehaviorTreeComponent& BTC [in], uint8* Mem [in])` | 브랜치 비활성화 시 자원을 정리한다. |
 | **OnSearchStart** | `void OnSearchStart(FBehaviorTreeSearchData& Data [in/out])` | Decorator 평가 직전 즉시 체크한다. |
 | **GetInstanceMemorySize** | `uint16 GetInstanceMemorySize() const` | Service용 NodeMemory 크기를 반환한다. |
+
+<br>
 
 ### UBTDecorator
 
