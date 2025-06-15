@@ -27,6 +27,10 @@
 
 ## 🏷️ Pattern Snippets
 
+### 📄 Override Core Reference
+&nbsp;&nbsp;&nbsp; - 🔗 **Link** : [Override_Reference.md](PatternSnippets/Override_Reference.md)  
+&nbsp;&nbsp;&nbsp; - 📝 **Description** : Unreal에서 제공되는 Override 함수들을 정리
+
 ### 📄 Collision Interaction Trigger Example
 &nbsp;&nbsp;&nbsp; - 🔗 **Link** : [Entrance&Exit_System.md](PatternSnippets/Entrance&Exit_System.md)  
 &nbsp;&nbsp;&nbsp; - 📝 **Description** : BoxCollision 기반 진입/퇴장 트리거 처리 샘플 코드
