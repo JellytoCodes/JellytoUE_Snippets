@@ -29,7 +29,7 @@
 
 ### 📄 Override Core Reference
 &nbsp;&nbsp;&nbsp; - 🔗 **Link** : [Override_Reference.md](PatternSnippets/Override_Reference.md)  
-&nbsp;&nbsp;&nbsp; - 📝 **Description** : Unreal에서 제공되는 Override 함수들을 정리
+&nbsp;&nbsp;&nbsp; - 📝 **Description** : Unreal에서 자주 사용하는 Override 함수들을 정리
 
 ### 📄 Collision Interaction Trigger Example
 &nbsp;&nbsp;&nbsp; - 🔗 **Link** : [Entrance&Exit_System.md](PatternSnippets/Entrance&Exit_System.md)  
