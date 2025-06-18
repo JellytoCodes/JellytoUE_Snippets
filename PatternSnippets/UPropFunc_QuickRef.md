@@ -13,7 +13,7 @@ UFUNCTION( [Specifier…], Category="A|B", meta=(Key=Value, …) )
 
 | 레이어           | 설명                                  | 작성 위치 예시                              |              |
 | ------------- | ----------------------------------- | ------------------------------------- | ------------ |
-| **Category**  | 디테일 패널 / BP 팔레트에서 **폴더 경로** 지정      | \`Category="UI                        | Inventory"\` |
+| **Category**  | 디테일 패널 / BP 팔레트에서 **폴더 경로** 지정      | `Category="UI Inventory"`                       |  |
 | **Specifier** | 런타임·네트워크·BP 노출 등 **행동 자체** 결정       | `UPROPERTY(EditAnywhere, Replicated)` |              |
 | **Meta**      | 에디터 UI, 핀 구성, 조건, 자산 필터 등 **장식·검증** | `meta=(ClampMin="0", BindWidget)`     |              |
 
